@@ -16,10 +16,24 @@ Osoby
 	CREATE (lenab:Osoba {imie: 'Lena B', rok_ur: 2006, mieszka: 'Lublewo'})
 
 Grupy
-=====
+-----
 	CREATE (konie:Grupa {nazwa: 'konie', dzien: 'wtorek'})
 	CREATE (basen:Grupa {nazwa: 'basen', dzien: 'czwartek'})
 	CREATE (klasaII:Grupa {nazwa: 'klasa II'})
 
 A teraz relacje:
+
+relacja 1: ZNA
+--------------
+	CREATE
+	(lenap)-[:ZNA {relacja:['przyjazn']}]->(lenab),
+	(dalia)-[:ZNA {relacja:['kolezanka']}]->(jagodap),
+	(lenap)-[:ZNA]->(pawel),
+
+relacja 2: NALEZY (do jakiejś grupy)
+------------------------------------
+	CREATE
+	(lenap)-[:NALEZY]->(konie),
+	(pawel)-[:NALEZY]->(basen),
+	(wiki)-[:NALEZY]->(klasaII)
 
