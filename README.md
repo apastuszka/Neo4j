@@ -10,7 +10,7 @@ Przedstawiam moją bazę danych. Jest to baza znajomych i przyjaciół moich có
 Poniżej polecenia w języku CYPHER do tworzenia poszczególnych elementów bazy:
 
 Osoby
-=====
+-----
 	CREATE (lenap:Osoba {imie: 'Lena P', rok_ur: 2006, mieszka: 'Bielkowko'})
 	CREATE (dalia:Osoba {imie: 'Dalia', rok_ur: 2004, mieszka: 'Bielkowko'})
 	CREATE (lenab:Osoba {imie: 'Lena B', rok_ur: 2006, mieszka: 'Lublewo'})
