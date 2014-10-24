@@ -37,3 +37,20 @@ relacja 2: NALEZY (do jakiejś grupy)
 	(pawel)-[:NALEZY]->(basen),
 	(wiki)-[:NALEZY]->(klasaII)
 
+Teraz kolej na wyszukiwanie informacji.
+
+Pokaż znajomych Leny z klasy II:
+
+	MATCH (n:Osoba)-[:NALEZY]->(klasa:Grupa) WHERE klasa.nazwa='klasa II' RETURN n.imie
+
+Rezultat:
+
+![wynik](baza2.png)
+
+A znajomi mieszkający w Gdańsku?
+
+![wynik1](baza3.png)
+
+A gdzie mieszkają przyjaciele Leny?
+
+![wynik2](baza4.png)
