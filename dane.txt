@@ -1,0 +1,105 @@
+CREATE (lenap:Osoba {imie: 'Lena P', rok_ur: 2006, mieszka: 'Bielkowko'})
+CREATE (dalia:Osoba {imie: 'Dalia', rok_ur: 2004, mieszka: 'Bielkowko'})
+CREATE (lenab:Osoba {imie: 'Lena B', rok_ur: 2006, mieszka: 'Lublewo'})
+CREATE (wiki:Osoba {imie: 'Wiktoria', rok_ur: 2006, mieszka: 'Bielkowko'})
+CREATE (krzys:Osoba {imie: 'Krzysio', rok_ur: 2006, mieszka: 'Bielkowo'})
+CREATE (aga:Osoba {imie: 'Agnieszka', rok_ur: 2004, mieszka: 'Lublewo'})
+CREATE (jagodaw:Osoba {imie: 'Jagoda W', rok_ur: 2006, mieszka: 'Gdansk'})
+CREATE (jagodap:Osoba {imie: 'Jagoda P', rok_ur: 2002, mieszka: 'Gdynia'})
+CREATE (amelia:Osoba {imie: 'Amelia', rok_ur: 2005, mieszka: 'Straszyn'})
+CREATE (kuba:Osoba {imie: 'Jakub'})
+CREATE (mateusz:Osoba {imie: 'Mateusz', rok_ur: 2006, mieszka: 'Bielkowko'})
+CREATE (pawel:Osoba {imie: 'Pawel', rok_ur: 2006, mieszka: 'Bielkowko'})
+CREATE (wera:Osoba {imie: 'Weronika', rok_ur: 2004, mieszka: 'Bielkowko'})
+CREATE (zosia:Osoba {imie: 'Zosia', rok_ur: 2005, mieszka: 'Bielkowko'})
+CREATE
+	(lenap)-[:ZNA {relacja:['siostra']}]->(dalia),
+	(lenap)-[:ZNA {relacja:['przyjazn']}]->(lenab),
+	(lenap)-[:ZNA {relacja:['przyjazn']}]->(wiki),
+	(lenap)-[:ZNA]->(aga),
+	(lenap)-[:ZNA]->(jagodaw),
+	(lenap)-[:ZNA {relacja:['kolezanka']}]->(jagodap),
+	(lenap)-[:ZNA]->(krzys),
+	(lenap)-[:ZNA {relacja:['kolezanka']}]->(amelia),
+	(lenap)-[:ZNA]->(kuba),
+	(lenap)-[:ZNA]->(mateusz),
+	(lenap)-[:ZNA]->(pawel),
+	(lenap)-[:ZNA]->(wera),
+	(lenap)-[:ZNA]->(zosia),
+	(dalia)-[:ZNA {relacja:['siostra']}]->(lenap),
+	(dalia)-[:ZNA]->(lenab),
+	(dalia)-[:ZNA]->(wiki),
+	(dalia)-[:ZNA {relacja:['kolezanka']}]->(aga),
+	(dalia)-[:ZNA]->(jagodaw),
+	(dalia)-[:ZNA {relacja:['kolezanka']}]->(jagodap),
+	(dalia)-[:ZNA {relacja:['przyjazn']}]->(amelia),
+	(dalia)-[:ZNA]->(kuba),
+	(dalia)-[:ZNA]->(mateusz),
+	(dalia)-[:ZNA]->(pawel),
+	(dalia)-[:ZNA {relacja:['kolezanka']}]->(wera),
+	(dalia)-[:ZNA {relacja:['kolezanka']}]->(zosia),
+	(wiki)-[:ZNA]->(dalia),
+	(wiki)-[:ZNA {relacja:['przyjazn']}]->(lenab),
+	(wiki)-[:ZNA {relacja:['przyjazn']}]->(lenap),
+	(wiki)-[:ZNA]->(aga),
+	(wiki)-[:ZNA]->(krzys),
+	(wiki)-[:ZNA]->(kuba),
+	(wiki)-[:ZNA]->(mateusz),
+	(wiki)-[:ZNA]->(pawel),
+	(wiki)-[:ZNA]->(wera),
+	(wiki)-[:ZNA]->(zosia),
+	(aga)-[:ZNA {relacja:['kolezanka']}]->(dalia),
+	(aga)-[:ZNA]->(wiki),
+	(aga)-[:ZNA]->(lenap),
+	(aga)-[:ZNA]->(kuba),
+	(aga)-[:ZNA]->(wera),
+	(aga)-[:ZNA]->(zosia),
+	(amelia)-[:ZNA {relacja:['kolezanka']}]->(lenap),
+	(amelia)-[:ZNA {relacja:['przyjazn']}]->(dalia),
+	(amelia)-[:ZNA {relacja:['kolezanka']}]->(jagodaw),
+	(krzys)-[:ZNA]->(lenab),
+	(krzys)-[:ZNA]->(lenap),
+	(krzys)-[:ZNA]->(wiki),
+	(krzys)-[:ZNA {relacja:['kolega']}]->(mateusz),
+	(krzys)-[:ZNA {relacja:['przyjazn']}]->(pawel)
+
+CREATE (konie:Grupa {nazwa: 'konie', dzien: 'wtorek'})
+CREATE
+	(lenap)-[:NALEZY]->(konie),
+	(dalia)-[:NALEZY]->(konie),
+	(wiki)-[:NALEZY]->(konie),
+	(aga)-[:NALEZY]->(konie),
+	(kuba)-[:NALEZY]->(konie)
+
+CREATE (basen:Grupa {nazwa: 'basen', dzien: 'czwartek'})
+CREATE
+	(pawel)-[:NALEZY]->(basen),
+	(krzys)-[:NALEZY]->(basen),
+	(mateusz)-[:NALEZY]->(basen)
+
+CREATE (klasaII:Grupa {nazwa: 'klasa II'})
+CREATE
+	(lenap)-[:NALEZY]->(klasaII),
+	(lenab)-[:NALEZY]->(klasaII),
+	(wiki)-[:NALEZY]->(klasaII),
+	(krzys)-[:NALEZY]->(klasaII),
+	(mateusz)-[:NALEZY]->(klasaII),
+	(pawel)-[:NALEZY]->(klasaII)
+
+CREATE (klasaIV:Grupa {nazwa: 'klasa IV'})
+CREATE
+	(dalia)-[:NALEZY]->(klasaIV),
+	(wera)-[:NALEZY]->(klasaIV),
+	(zosia)-[:NALEZY]->(klasaIV)
+
+CREATE (szkmuz:Grupa {nazwa: 'szkola muzyczna'})
+CREATE
+	(dalia)-[:NALEZY]->(szkmuz),
+	(amelia)-[:NALEZY]->(szkmuz)
+
+CREATE (kz:Grupa {nazwa: 'zbor KZ'})
+CREATE
+	(lenap)-[:NALEZY]->(kz),
+	(dalia)-[:NALEZY]->(kz),
+	(amelia)-[:NALEZY]->(kz),
+	(jagodaw)-[:NALEZY]->(kz)
