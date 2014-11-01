@@ -47,6 +47,10 @@ Rezultat:
 
 ![wynik](baza2.png)
 
+Można trochę inaczej:
+
+![wynik3](baza5.png)
+
 A znajomi mieszkający w Gdańsku?
 
 ![wynik1](baza3.png)
